@@ -1,0 +1,195 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefae0; /* 淡米色背景，紙張感 */
+    color: #3e2f22; /* 深棕文字 */
+}
+  
+header {
+    background-color: #5e503f; /* 木質深棕 */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+h1, h2 {
+    margin: 0.5rem 0;
+}
+  
+main {
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+  
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 400px;
+}
+  
+input, select, button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #b8a48a; /* 溫柔的邊框 */
+    border-radius: 4px;
+    background-color: #fffdf5; /* 書頁感 */
+    color: #3e2f22;
+}
+  
+button {
+    background-color: #a47551; /* 咖啡棕按鈕 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+button:hover {
+    background-color: #855e42; /* 深咖 hover 效果 */
+}
+  
+#collectionList {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+  
+.card {
+    background-color: #fffdf5; /* 書頁色卡片 */
+    border: 1px solid #d4c6b2;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(80, 60, 40, 0.05);
+}
+  
+.tag {
+    display: inline-block;
+    background-color: #f2e8cf; /* 輕柔米色標籤背景 */
+    color: #6f4e37; /* 可可棕標籤文字 */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+  
+#upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+}
+  
+#upload-section h2 {
+    margin-bottom: 1.5rem; 
+}
+  
+#uploadForm {
+    width: 100%;
+    max-width: 400px;
+}
+  
+#goLibraryBtn {
+    margin-top: 1rem;
+    background-color: #a47551;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+#goLibraryBtn:hover {
+    background-color: #855e42;
+}
+  
+#goNoteBtn {
+    margin-top: 1rem;
+    background-color: #a47551;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+#goNoteBtn:hover {
+    background-color: #855e42;
+}
+  
+.emoji {
+    position: absolute;
+    top: -2rem;
+    font-size: 2rem;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+}
+  
+@keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+}
+  
+#user-menu {
+    position: relative;
+    display: inline-block;
+}
+  
+#userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+#dropdown {
+    position: absolute;
+    width:  150px;
+    right: 0;
+    top: 50px;
+    background-color: #fffdf5;
+    border: 1px solid #d4c6b2;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+  
+#dropdown button {
+    background-color: #a47551;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    white-space: normal;      
+    text-align: left;         
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+  
+#dropdown button:hover {
+    background-color: #855e42;
+}
+  
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>我的收藏圖書館</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>📚 我的收藏圖書館</h1>
+            <div id="user-menu">
+                <img id="userAvatar" src="images/cat.png" alt="User Avatar" />
+                <div id="dropdown" class="hidden">
+                    <button id="profileBtn">👤 使用者資訊</button>
+                    <button id="logoutBtn">🚪 登出</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="upload-section">
+                <h2>➕ 新增收藏</h2>
+                <form id="uploadForm">
+                    <input type="text" id="titleInput" placeholder="書名 / 論文標題" required />
+                    <input type="text" id="authorInput" placeholder="作者 / 出版者" required />
+                    <input type="text" id="tagInput" placeholder="標籤（可自定分類，如 AI、法律）" />
+                    <select id="typeSelect">
+                        <option value="book">書籍</option>
+                        <option value="textbook">課本</option>
+                        <option value="paper">論文</option>
+                        <option value="original">原文書</option>
+                    </select>
+                    <input type="file" id="fileInput" required />
+                    <button type="submit">上傳</button>
+                </form>
+                <button id="goLibraryBtn">📂 前往我的書櫃</button>
+                <button id="goNoteBtn">📝 前往我的筆記</button>
+            </section>
+        </main>
+
+        <script type="module" src="script.js"></script>
+        <script src="emoji-fall.js"></script>
+    </body>
+</html>

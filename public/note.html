@@ -1,0 +1,37 @@
+<!-- note.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>我的筆記</title>
+        <link rel="stylesheet" href="note.css">
+    </head>
+    <body>
+        <header>
+            <h1>📝 我的筆記</h1>
+            <button onclick="window.location.href='main.html'">← 返回首頁</button>
+        </header>
+
+        <main>
+            <section id="note-form">
+                <h2>新增筆記</h2>
+                <input type="text" id="noteTitle" placeholder="筆記標題" />
+                <textarea id="noteContent" placeholder="請輸入筆記內容..."></textarea>
+                <label for="noteFile">📤 上傳 PDF：</label>
+                <input type="file" id="noteFile" accept=".pdf" />
+                <div class="action-row">
+                    <button id="uploadNoteBtn">上傳筆記檔案</button>
+                    <button id="addNoteBtn">新增筆記</button>
+                </div>
+            </section>
+
+            <section id="note-list">
+                <h2>我的筆記列表</h2>
+                <div id="notes"></div>
+            </section>
+        </main>
+
+        <script src="note.js"></script>
+    </body>
+</html>
