@@ -1,3 +1,20 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
+import { getDatabase, ref, remove } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD-fRDCqGnpsYtGQtQ68vkXzGvwOQ2fl4Q",
+  authDomain: "collection-library-30ccc.firebaseapp.com",
+  projectId: "collection-library-30ccc",
+  storageBucket: "collection-library-30ccc.appspot.com",
+  messagingSenderId: "798446863970",
+  appId: "1:798446863970:web:c294baff4146f6b998b33b",
+  measurementId: "G-SP3HKSJPFX",
+  databaseURL: "https://collection-library-30ccc-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
 const shelf = document.getElementById("bookshelf");
 const backToTopBtn = document.getElementById("backToTopBtn");
 
@@ -65,7 +82,18 @@ shelf.addEventListener("click", (e) => {
       const books = JSON.parse(localStorage.getItem("myLibrary") || "[]");
       const updated = books.filter(book => book.id != id);
       localStorage.setItem("myLibrary", JSON.stringify(updated));
-      window.location.reload();
+
+      // 刪除 Firebase 中的資料
+      const dbRef = ref(database, 'collections/' + id);
+      remove(dbRef)
+        .then(() => {
+          console.log("已同步刪除 Firebase 資料");
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error("刪除 Firebase 資料失敗：", error);
+          window.location.reload();
+        });
     }
   }
 });

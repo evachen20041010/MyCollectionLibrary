@@ -1,6 +1,12 @@
 // Firebase 初始化
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
 import { getAuth, signOut } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
+import {
+  getDatabase,
+  ref,
+  set,
+  remove
+} from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyD-fRDCqGnpsYtGQtQ68vkXzGvwOQ2fl4Q",
@@ -14,22 +20,52 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const database = getDatabase(app);
 
-// 表單提交：儲存收藏資料至 localStorage
 document.getElementById("uploadForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const title = document.getElementById("titleInput").value;
-  const author = document.getElementById("authorInput").value;
-  const type = document.getElementById("typeSelect").value;
-  const tag = document.getElementById("tagInput").value.trim();
   const file = document.getElementById("fileInput").files[0];
 
-  const newItem = { id: Date.now(), title, author, type, tag, fileName: file?.name || "" };
+  // 嘗試抓取使用者輸入的欄位（可為空）
+  let inputTitle = document.getElementById("titleInput").value.trim();
+  let inputAuthor = document.getElementById("authorInput").value.trim();
+  let inputType = document.getElementById("typeSelect").value;
+  let inputTag = document.getElementById("tagInput").value.trim();
+
+  // 根據使用者是否有上傳檔案，決定欄位內容
+  let title = inputTitle || (file ? file.name : "");
+  let author = inputAuthor || (file ? "未知" : "");
+  let type = inputType || (file ? "file" : "");
+  let tag = inputTag || (file ? "其他" : "");
+
+  // 如果沒有檔案、也沒有輸入標題和作者，就警告
+  if (!file && (!inputTitle || !inputAuthor)) {
+    alert("請輸入書名和作者，或至少選擇一個檔案");
+    return;
+  }
+
+  const newItem = {
+    id: Date.now(),
+    title,
+    author,
+    type,
+    tag,
+    fileName: file?.name || ""
+  };
 
   const storedItems = JSON.parse(localStorage.getItem("myLibrary") || "[]");
   storedItems.push(newItem);
   localStorage.setItem("myLibrary", JSON.stringify(storedItems));
+
+  const dbRef = ref(database, 'collections/' + newItem.id);
+  set(dbRef, newItem)
+    .then(() => {
+      console.log("已寫入 Firebase Realtime Database");
+    })
+    .catch((error) => {
+      console.error("寫入 Firebase 失敗：", error);
+    });
 
   this.reset();
 });
