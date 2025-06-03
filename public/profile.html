@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>使用者資訊</title>
-        <link rel="stylesheet" href="profile.css" />
-    </head>
-    <body>
-        <main class="profile-container">
-            <h1>👤 使用者基本資訊</h1>
-            <div style="text-align: center; margin-bottom: 1rem;">
-                <img src="images/cat.png" alt="使用者頭像" id="avatar-preview" />
-                <div id="nicknameDisplay">User</div>
-            </div>
-            <div class="profile-info">
-                <label>📧 帳號（Email）：<span id="user-email"></span></label>
-                <label>🏷️ 暱稱：<input type="text" id="nickname" placeholder="請輸入暱稱" /></label>
-                <label>🔒 密碼：<input type="password" id="new-password" placeholder="輸入新密碼" /></label>
-            </div>
-            <div class="profile-actions">
-                <button id="saveBtn">💾 儲存更改</button>
-                <button id="deleteBtn">🗑️ 刪除帳戶</button>
-                <button id="backBtn">🔙 返回</button>
-            </div>
-            <p id="status"></p>
-        </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>使用者資訊</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <main class="profile-container">
+    <h1>👤 使用者基本資訊</h1>
 
-        <script type="module" src="profile.js"></script>
-    </body>
+    <div class="avatar-section">
+      <img src="images/cat.png" alt="使用者頭像" id="avatar-preview" />
+      <div id="nicknameDisplay">User</div>
+    </div>
+
+    <div class="profile-info">
+      <label>📧 帳號（Email）：<span id="user-email"></span></label>
+      <label>🏷️ 暱稱：<input type="text" id="nickname" placeholder="請輸入暱稱" /></label>
+      <label>🔒 密碼：<input type="password" id="new-password" placeholder="輸入新密碼" /></label>
+    </div>
+
+    <div class="profile-actions">
+      <button id="saveBtn">💾 儲存更改</button>
+      <button id="deleteBtn">🗑️ 刪除帳戶</button>
+      <button id="backBtn">🔙 返回</button>
+    </div>
+
+    <p id="status"></p>
+  </main>
+
+  <script type="module" src="profile.js"></script>
+</body>
 </html>

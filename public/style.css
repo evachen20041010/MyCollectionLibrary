@@ -85,7 +85,7 @@ button:hover {
 }
   
 #upload-section h2 {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
 }
   
 #uploadForm {
@@ -93,22 +93,7 @@ button:hover {
     max-width: 400px;
 }
   
-#goLibraryBtn {
-    margin-top: 1rem;
-    background-color: #a47551;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-  
-#goLibraryBtn:hover {
-    background-color: #855e42;
-}
-  
+#goLibraryBtn,
 #goNoteBtn {
     margin-top: 1rem;
     background-color: #a47551;
@@ -121,6 +106,7 @@ button:hover {
     transition: background-color 0.3s;
 }
   
+#goLibraryBtn:hover,
 #goNoteBtn:hover {
     background-color: #855e42;
 }
@@ -159,12 +145,12 @@ button:hover {
   
 #dropdown {
     position: absolute;
-    width:  150px;
+    width: 150px;
     right: 0;
     top: 50px;
     background-color: #fffdf5;
     border: 1px solid #d4c6b2;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     padding: 0.5rem 0.8rem;
     z-index: 999;
@@ -179,8 +165,8 @@ button:hover {
     color: white;
     border: none;
     padding: 0.5rem 0.8rem;
-    white-space: normal;      
-    text-align: left;         
+    white-space: normal;
+    text-align: left;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;

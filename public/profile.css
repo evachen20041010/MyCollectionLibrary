@@ -1,31 +1,35 @@
+/* Layout 基本設定 */
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fefae0;
-    color: #3e2f22;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: #fefae0;
+    color: #3e2f22;
 }
   
+/* 外層容器 */
 .profile-container {
     background-color: #fffdf5;
     border: 1px solid #d4c6b2;
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 100%;
     max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
   
+/* 標題 */
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #5e503f;
 }
   
+/* 使用者資訊區塊 */
 .profile-info {
     display: flex;
     flex-direction: column;
@@ -39,8 +43,7 @@ h1 {
 }
   
 .profile-info input[type="text"],
-.profile-info input[type="password"],
-.profile-info input[type="file"] {
+.profile-info input[type="password"] {
     margin-top: 0.4rem;
     padding: 0.5rem;
     border: 1px solid #b8a48a;
@@ -48,7 +51,22 @@ h1 {
     background-color: #fffdf5;
     color: #3e2f22;
 }
+
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
   
+#nicknameDisplay {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #5e503f;
+}
+  
+/* 頭像區塊 */
 #avatar-preview {
     margin-top: 0.5rem;
     width: 100px;
@@ -58,6 +76,7 @@ h1 {
     border: 1px solid #ccc;
 }
   
+/* 按鈕區塊 */
 .profile-actions {
     margin-top: 1.5rem;
     display: flex;
@@ -81,9 +100,10 @@ h1 {
     background-color: #855e42;
 }
   
+/* 儲存/錯誤狀態訊息 */
 #status {
     margin-top: 1rem;
     text-align: center;
-    color: #b94a48;
     font-size: 0.95rem;
+    color: #b94a48;
 }

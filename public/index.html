@@ -1,24 +1,25 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>登入或註冊</title>
     <link rel="stylesheet" href="auth.css" />
-  </head>
-  <body>
+</head>
+<body>
     <div class="auth-container">
-      <h2 id="form-title">🔐 登入</h2>
-      <form id="auth-form">
-        <input type="email" id="email" placeholder="請輸入電子郵件" required />
-        <input type="password" id="password" placeholder="請輸入密碼" required />
-        <button type="submit">登入</button>
-      </form>
-      <p id="switch-text">還沒有帳號？ <a href="#" id="toggle-auth">註冊</a></p>
-      <p id="auth-message"></p>
-      </div>
+        <h2 id="form-title">🔐 登入</h2>
+        <form id="auth-form">
+            <input type="email" id="email" placeholder="請輸入電子郵件" required />
+            <input type="password" id="password" placeholder="請輸入密碼" required />
+            <button type="submit">登入</button>
+        </form>
+        <p id="switch-text">
+            還沒有帳號？ <a href="#" id="toggle-auth">註冊</a>
+        </p>
+        <p id="auth-message"></p>
+    </div>
 
-      <script type="module" src="auth.js"></script>
-  </body>
+    <script type="module" src="auth.js"></script>
+</body>
 </html>
