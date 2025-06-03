@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF 閱讀器</title>
+  <link rel="stylesheet" href="pdf-view.css" />
+</head>
+<body>
+  <header>
+    <h1>📖 PDF 閱讀</h1>
+    <button onclick="window.location.href='note.html'">← 返回筆記</button>
+  </header>
+  <main>
+    <div id="pdf-container"></div>
+    <div id="pdf-actions">
+      <button onclick="editPDFNote()">✏️ 編輯</button>
+      <button onclick="deletePDFNote()">🗑️ 刪除</button>
+      <button onclick="sharePDFNote()">🔗 分享</button>
+    </div>
+  </main>
+  <script src="pdf-view.js"></script>
+</body>
+</html>
