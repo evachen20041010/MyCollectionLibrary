@@ -1,7 +1,7 @@
 // 取得 index
 const params = new URLSearchParams(window.location.search);
 const index = parseInt(params.get("index"), 10);
-const notes = JSON.parse(localStorage.getItem("myLibrary") || "[]");
+const notes = JSON.parse(localStorage.getItem("myNotes") || "[]");
 const note = notes[index];
 
 // 顯示 PDF
@@ -17,7 +17,7 @@ function editPDFNote() {
   if (newTitle) {
     note.title = newTitle;
     notes[index] = note;
-    localStorage.setItem("myLibrary", JSON.stringify(notes));
+    localStorage.setItem("myNotes", JSON.stringify(notes));
     alert("標題已更新！");
     location.reload();
   }
@@ -26,7 +26,7 @@ function editPDFNote() {
 function deletePDFNote() {
   if (confirm("確定要刪除這個 PDF 筆記嗎？")) {
     notes.splice(index, 1);
-    localStorage.setItem("myLibrary", JSON.stringify(notes));
+    localStorage.setItem("myNotes", JSON.stringify(notes));
     alert("已刪除！");
     window.location.href = "note.html";
   }

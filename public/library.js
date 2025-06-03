@@ -27,7 +27,9 @@ const presetBooks = [
 ];
 
 // 使用者自訂書籍（含 id）
-const userBooks = (JSON.parse(localStorage.getItem("myLibrary") || "[]")).map(book => ({
+const userBooks = (JSON.parse(localStorage.getItem("myLibrary") || "[]"))
+.filter(book => book.author && book.tag)
+.map(book => ({
   ...book,
   isUser: true
 }));

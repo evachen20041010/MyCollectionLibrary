@@ -5,15 +5,15 @@ const noteFileInput = document.getElementById("noteFile");
 const uploadNoteBtn = document.getElementById("uploadNoteBtn");
 const notesContainer = document.getElementById("notes");
 
-// 初始資料（可改串接後端）
-let notes = JSON.parse(localStorage.getItem("myLibrary") || "[]");
+// 初始資料
+let notes = JSON.parse(localStorage.getItem("myNotes") || "[]");
 
 if (notes.length === 0) {
   notes = [
     { title: "閱讀筆記：AI導論", content: "人工智慧是一種模擬人類智能的技術..." },
     { title: "學習要點：法學緒論", content: "法律的基本精神是保障公平與正義..." }
   ];
-  localStorage.setItem("myLibrary", JSON.stringify(notes)); // 初始化寫入
+  localStorage.setItem("myNotes", JSON.stringify(notes));
 }
 
 // 渲染筆記
@@ -70,7 +70,7 @@ uploadNoteBtn.addEventListener("click", () => {
     const pdfUrl = reader.result;
 
     notes.unshift({ title, content: "", pdfUrl });
-    localStorage.setItem("myLibrary", JSON.stringify(notes)); 
+    localStorage.setItem("myNotes", JSON.stringify(notes));
     renderNotes();
     noteFileInput.value = "";
   };
